@@ -1,7 +1,7 @@
 # ReTerminal E1002 colour epaper - ESPHome powered Home Assistant Dashboard
 
 ## Contents:
-This repository contains all the code and dashboard configurations used on my ReTerminal E1002 colour epaper display, running ESPHOme and displaying dashboards from Home Assistant.
+This repository contains all the code and dashboard configurations used on my ReTerminal E1002 colour epaper display, running ESPHome and displaying dashboards from Home Assistant.
 
 `esphome.yaml` contains the ESPHome code for the ReTerminal E1002.  
 `hass-dashboard.yaml` contains the full raw dashboard used in Home Assistant.  
@@ -23,3 +23,16 @@ The wallpaper is just a picture card with a sample uploaded. On my personal setu
 
 The ESPHome codes requires running the [Puppet Addon](https://github.com/balloob/home-assistant-addons) to generate the screenshots and convert them to the right colours for the epaper to display.
 Specifically, it relies on [pull request #30](https://github.com/balloob/home-assistant-addons/pull/30) as it implements the required functionality for dithering and display mapping.
+
+## Photos of the dashboards:
+Home page
+![Home page](/images/home.webp?raw=true "Home page")
+
+Wallpaper page
+![Wallpaper](/images/wallpaper.webp?raw=true "Wallpaper Page")
+
+Energy
+![Energy page](/images/energy.webp?raw=true "Energy page")
+
+Plants
+![Plants page](/images/plants.webp?raw=true "Plants page")
