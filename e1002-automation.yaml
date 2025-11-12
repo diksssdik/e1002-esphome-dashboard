@@ -49,12 +49,37 @@ actions:
             entity_id: sensor.grid_export_power
             above: 1500
         sequence:
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 1
+              milliseconds: 0
           - action: input_select.select_option
             metadata: {}
             data:
               option: energy
             target:
               entity_id: input_select.reterminal_e1002_page_selector
+      - conditions:
+          - condition: state
+            entity_id: sensor.next_calendar_family_event_date
+            state:
+              - "0"
+        sequence:
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 3
+              milliseconds: 0
+          - action: input_select.select_option
+            metadata: {}
+            data:
+              option: home
+            target:
+              entity_id: input_select.reterminal_e1002_page_selector
+        alias: >-
+          If there are any calendar.family events today, display Home Dashboard
+          page
       - alias: If nobody is home, display Wallpaper Dashboard page
         conditions:
           - condition: state
@@ -65,7 +90,7 @@ actions:
           - delay:
               hours: 0
               minutes: 0
-              seconds: 3
+              seconds: 5
               milliseconds: 0
           - action: input_select.select_option
             metadata: {}
@@ -87,11 +112,11 @@ actions:
               message: The ReTerminal E1002 battery is under 5%. Please recharge soon.
               title: ReTerminal Low Battery
     default:
-      - alias: Display default Home Dashboard page
+      - alias: Display default Wallpaper Dashboard page
         action: input_select.select_option
         metadata: {}
         data:
-          option: home
+          option: wallpaper
         target:
           entity_id: input_select.reterminal_e1002_page_selector
 mode: single
