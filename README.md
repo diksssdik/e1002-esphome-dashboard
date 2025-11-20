@@ -3,7 +3,7 @@
 ## Contents:
 This repository contains all the code and dashboard configurations used on my ReTerminal E1002 colour epaper display, running ESPHome and displaying dashboards from Home Assistant.
 
-`esphome.yaml` contains the ESPHome code for the ReTerminal E1002.  
+`esphome.yaml` contains the ESPHome code for the ReTerminal E1002. This code is based on ESPHome version 2025.10.X. There are some changes in 2025.11.0 which *should* be backwards compatible, but I have not yet had the chance to test it. I will update the code when I have the time to try and test.
 `hass-dashboard.yaml` contains the full raw dashboard used in Home Assistant.  
 `e1002-automation.yaml` includes a sample automation to select the page to display + notify on low battery.  
 
